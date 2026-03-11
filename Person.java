@@ -6,11 +6,13 @@
 // FileName: "Person.java"
 // Date: March 11, 2026
 
-// This class stores the basic HR information for one person.
-// Each Personn object contains a name, height, and weight.
-// It also provides getter and setter methods,
-// a toString() method for clean printing, and an equals() method
-// so duplicate Person objects can be detected.
+/*
+Person class stores the basic HR information for one person.
+Each Personn object contains a name, height, and weight.
+It also provides getter and setter methods,
+a toString() method for clean printing, and an equals() method
+so duplicate Person objects can be detected.
+*/
 public class Person {
     // Private instance variables for storing one person's data
     private String name;
