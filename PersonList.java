@@ -6,7 +6,21 @@
 // FileName: "PersonList.java"
 // Date: March 11, 2026
 
+/*
+PersonList interface
+Defines the required behaviors for a class that stores Person objects.
+Any class implementing this interface must provide:
+1. a method to add a Person
+2. a method to get a Person at a given index
+*/
+public interface PersonList {
+    // add method
+    // Adds a Person object to the collection
+    public void add(Person p);
 
-public class PersonList {
-    
+    /*
+    get method
+    Returns the Person object at the given index.
+    */
+   public Person get(int index);
 }
