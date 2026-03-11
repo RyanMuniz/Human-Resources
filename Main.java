@@ -1,3 +1,12 @@
+// Name: Ryan Muniz
+// Email: rmuniz15@student.cnm.edu
+// Class: CSCI 2260: Section R01
+// Assignment: Week 6: Human Resources Part 1
+// Purpose:  
+// FileName: "Main.java"
+// Date: March 11, 2026
+
+
 /*
 This code is provided to give you a
 starting place. It should be modified.
