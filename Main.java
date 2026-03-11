@@ -28,6 +28,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+// Cannot test this code until the other programs are written.
+// Logic looks good though
 public class Main 
 {
     /*
