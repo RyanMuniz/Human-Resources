@@ -2,7 +2,7 @@
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
 // Assignment: Week 6: Human Resources Part 1
-// Purpose:  
+// Purpose:  Interface for Main.java aka defines rules for other classes.
 // FileName: "PersonList.java"
 // Date: March 11, 2026
 

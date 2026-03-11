@@ -2,7 +2,7 @@
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
 // Assignment: Week 6: Human Resources Part 1
-// Purpose:  
+// Purpose: Helper class to Main.java that represents one person.
 // FileName: "Person.java"
 // Date: March 11, 2026
 

@@ -2,7 +2,7 @@
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
 // Assignment: Week 6: Human Resources Part 1
-// Purpose:  
+// Purpose:  Driver of program to reorganize human resources data.
 // FileName: "Main.java"
 // Date: March 11, 2026
 
