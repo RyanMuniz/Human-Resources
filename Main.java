@@ -21,6 +21,8 @@ Q5: CellPhone and Battery are related
 by which, Inheritance or Composition?
 
 */
+
+// Import necessary utilities
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -28,36 +30,71 @@ import java.util.Scanner;
 
 public class Main 
 {
+    /*
+Main method
+Method creates a test Person and a test PersonSet.
+It then opens hr.txt, skips the header row, reads the data
+for each person, creates Person objects from that data, and
+adds them to the PersonSet while automatically preventing duplicates.
+Lastly, it prints the contents of the PersonSet.
+*/
 	public static void main(String[] args) 
 	{
-		
-		System.out.println();
-		
-		/*
-		// Don't overcomplicate the data
-		// reading. After skipping the
-		// first row, you can use the 
-		// following to read a row of
-		// character info, assuming your
-		// Scanner is named "fileReader"
-		String name = fileReader.next();
-		double height = fileReader.nextDouble();
-		double weight = fileReader.nextDouble();
-		*/
-		
-		
-		
-		/*try
-		{	
-			FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
-			fileWriterOrder.write("testing");
-			fileWriterOrder.close();
-		}
-		catch(IOException e)
-		{
-			e.printStackTrace();
-			System.out.println(e);
-			System.exit(1);
-		}*/
+        // Create one Person object as a simple test of constructor
+        // Using Yoshi! :)
+		Person testPerson = new Person("Yoshi", 140, 50);
+
+        // Print the test Person so we can verify the object was created correctly
+		System.out.println("Single Person Test: ");
+        System.out.println(testPerson);
+        System.out.println();
+
+        // Create a PersonSet object as a test
+        PersonSet people = new PersonSet();
+
+        // Add the test Person to verify the set works
+        people.add(testPerson);
+
+        System.out.println("PersonSet Test after adding one person: ");
+        System.out.println(people);
+
+        try
+        {
+            // Create a File object representing hr.txt
+            File file = new File("hr.txt");
+
+            // Create a Scanner to read data from the file
+            Scanner fileReader = new Scanner(file);
+
+            // Skip the first line because it contains column headers
+            fileReader.nextLine();
+
+            // Continue reading rows until there is no more data
+            while(fileReader.hasNext()) {
+                // Read one full row of person data
+                String name = fileReader.next();
+                double height = fileReader.nextDouble();
+                double weight = fileReader.nextDouble();
+
+                // Create a Person object from the row's data
+                Person person = new Person(name, height, weight);
+
+                // Add the Person to the PersonSet
+                // Duplicate rows will be ignored!
+                people.add(person);
+            }
+            // Close Scanner after finishing
+            fileReader.close();
+        }
+        catch(IOException e) {
+            // Print error message if the file cannot be read
+            System.out.println("Error reading from hr.txt file.");
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        // Print the final set of unique Person objects
+        System.out.println("Final PersonSet with duplicates removed: ");
+        System.out.println(people);
 	}
 }
