@@ -2,7 +2,8 @@
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
 // Assignment: Week 7: Human Resources Part 2
-// Purpose: 
+// Purpose: Extends PersonSet to store Person objects in
+// alphabetical order by name.
 // FileName: "PersonOrderedSet.java"
 // Date: March 11, 2026
 

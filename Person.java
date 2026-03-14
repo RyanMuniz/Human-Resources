@@ -1,8 +1,10 @@
 // Name: Ryan Muniz
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
-// Assignment: Week 6: Human Resources Part 1
-// Purpose: Helper class to Main.java that represents one person.
+// Assignment: Week 7: Human Resources Part 2
+// Purpose: Represents a single person by storing their name, height,
+// and weight and provides methods for comparing, accessing, and
+// formatting that data.
 // FileName: "Person.java"
 // Date: March 11, 2026
 
@@ -86,7 +88,8 @@ public class Person implements Comparable<Person> {
      */
     @Override
     public String toString() {
-        return name + " " + height + " " + weight;
+        // Added format to increase readability and prevent super long numbers
+        return String.format("%s\t%.2f\t%.2f", name, height, weight);
     }
     /*
     equals Boolean method

@@ -2,7 +2,8 @@
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
 // Assignment: Week 7: Human Resources Part 2
-// Purpose:  Driver of program to reorganize human resources data.
+// Purpose: Runs the program by reading HR data from a txt file then
+// creates sets, removes duplicates, and displays results to the console.
 // FileName: "Main.java"
 // Date: March 11, 2026
 

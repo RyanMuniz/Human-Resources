@@ -1,8 +1,9 @@
 // Name: Ryan Muniz
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
-// Assignment: Week 6: Human Resources Part 1
-// Purpose:  Interface for Main.java aka defines rules for other classes.
+// Assignment: Week 7: Human Resources Part 2
+// Purpose:  Interface for Main.java. Defines the required methods for
+// any class that stores a collection of Person objects.
 // FileName: "PersonList.java"
 // Date: March 11, 2026
 

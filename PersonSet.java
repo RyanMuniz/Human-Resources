@@ -1,9 +1,9 @@
 // Name: Ryan Muniz
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
-// Assignment: Week 6: Human Resources Part 1
-// Purpose: Helper class to Main.java that stores many
-// Person objects and prevents duplicates.
+// Assignment: Week 7: Human Resources Part 2
+// Purpose: Stores a collection of unique Person objects and provides
+// basic functionality for adding, retrieving, and printhing them.
 // FileName: "PersonSet.java"
 // Date: March 11, 2026
 

@@ -2,7 +2,8 @@
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
 // Assignment: Week 7: Human Resources Part 2
-// Purpose: 
+// Purpose: Extends PersonSet to convert metric height and weight
+// values to imperial units before storing the Person objects.
 // FileName: "PersonImperialSet.java"
 // Date: March 11, 2026
 
