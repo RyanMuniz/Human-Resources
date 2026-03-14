@@ -12,8 +12,11 @@ Each Personn object contains a name, height, and weight.
 It also provides getter and setter methods,
 a toString() method for clean printing, and an equals() method
 so duplicate Person objects can be detected.
+
+For Part 2 of the assignment, this class will also sort Person
+objects alphabetically by Name inside PersonOrderedSet.
 */
-public class Person {
+public class Person implements Comparable<Person> {
     // Private instance variables for storing one person's data
     private String name;
     private double height;
@@ -29,6 +32,18 @@ public class Person {
     this.height = height;
     this.weight = weight;
    }
+   /*
+   Person Constructor method (HR Part 2)
+   Copied from above.
+   Creates a new Person object by copying the data from another
+   Person object.
+   */
+  public Person(Person p) {
+    this.name = p.name;
+    this.height = p.height;
+    this.weight = p.weight;
+  }
+
     /*
     getName method
     Returns the name stored in the Person object
@@ -99,4 +114,15 @@ public class Person {
         // Compare all three instance variables
         return name.equals(p.name) && height == p.height && weight == p.weight;
     }
+    /*
+    compareTo method (HR Part 2)
+    Compares this Person object to another Person object
+    alphabetically by name.
+    This is required by Comparable<Person> and allows
+    Collections.sort() to sort Person objects in A to Z order.
+    */
+   @Override
+   public int compareTo(Person p) {
+    return name.compareTo(p.name);
+   }
 }
