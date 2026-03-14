@@ -1,7 +1,7 @@
 // Name: Ryan Muniz
 // Email: rmuniz15@student.cnm.edu
 // Class: CSCI 2260: Section R01
-// Assignment: Week 6: Human Resources Part 1
+// Assignment: Week 7: Human Resources Part 2
 // Purpose:  Driver of program to reorganize human resources data.
 // FileName: "Main.java"
 // Date: March 11, 2026
@@ -47,38 +47,35 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-// Cannot test this code until the other programs are written.
-// Logic looks good though
+/*
+Main class
+Driver of the Human Resources assignment
+
+For part 2 of the assignment this will:
+1. Creates a PersonOrderedSet object
+2. Creates a PersonImperialSet object
+3. Reads human resources data from hr.txt
+4. Creates Person objects from each line of file data
+5. Adds one copy of each Person to the ordered set
+6. Adds another copy of each Person to the imperial set
+7. Writes both sets to seperate output files
+8. Prints both sets to the console
+*/
 public class Main 
 {
     /*
-Main method
-Method creates a test Person and a test PersonSet.
-It then opens hr.txt, skips the header row, reads the data
-for each person, creates Person objects from that data, and
-adds them to the PersonSet while automatically preventing duplicates.
-Lastly, it prints the contents of the PersonSet.
+main method
+Opens hr.txt, skips the header row, reads the data,
+and uses it to populate both a PersonOrderedSet and a 
+PersonImperialSet. Lastly, it writes each set to its
+own output file and prints both sets to the console.
 */
 	public static void main(String[] args) 
 	{
-        // Create one Person object as a simple test of constructor
-        // Using Yoshi! :)
-		Person testPerson = new Person("Yoshi", 140, 50);
-
-        // Print the test Person so we can verify the object was created correctly
-		System.out.println("Single Person Test: ");
-        System.out.println(testPerson);
-        System.out.println();
-
-        // Create a PersonSet object as a test
-        PersonSet people = new PersonSet();
-
-        // Add the test Person to verify the set works
-        people.add(testPerson);
-
-        System.out.println("PersonSet Test after adding one person: ");
-        System.out.println(people);
-
+        // Create the ordered set object
+        PersonOrderedSet orderedPeople = new PersonOrderedSet();
+        // Create the imperial set object
+        PersonImperialSet imperialPeople = new PersonImperialSet();
         try
         {
             // Create a File object representing hr.txt
@@ -97,25 +94,42 @@ Lastly, it prints the contents of the PersonSet.
                 double height = fileReader.nextDouble();
                 double weight = fileReader.nextDouble();
 
-                // Create a Person object from the row's data
-                Person person = new Person(name, height, weight);
+                // Create two seperate Person objects
+                Person orderedPerson = new Person(name, height, weight);
+                Person imperialPerson = new Person(name, height, weight);
 
-                // Add the Person to the PersonSet
-                // Duplicate rows will be ignored!
-                people.add(person);
+                // Add the Person to the ordered set
+                orderedPeople.add(orderedPerson);
+                // Add the seperate Person object to the imperial set
+                imperialPeople.add(imperialPerson);
             }
             // Close Scanner after finishing
             fileReader.close();
+            // Create a FileWriter for the ordered output file
+            FileWriter orderedWriter = new FileWriter("hr_ordered_set_output.txt");
+            // Write the ordered set data to the ordered output file
+            orderedWriter.write(orderedPeople.toString());
+            // Close the FileWrite to save
+            orderedWriter.close();
+            // Create a FileWriter for the imperial output file
+            FileWriter imperialWriter = new FileWriter("hr_imperial_set_output.txt");
+            // Write the imperial set data to the imperial output file
+            imperialWriter.write(imperialPeople.toString());
+            // Close the FileWriter to save
+            imperialWriter.close();
         }
         catch(IOException e) {
             // Print error message if the file cannot be read
-            System.out.println("Error reading from hr.txt file.");
+            System.out.println("Error reading from hr.txt file or writing to a file.");
             e.printStackTrace();
             System.exit(1);
         }
 
-        // Print the final set of unique Person objects
-        System.out.println("Final PersonSet with duplicates removed: ");
-        System.out.println(people);
+        // Print the ordered set to the console
+        System.out.println("Ordered Set Output: ");
+        System.out.println(orderedPeople);
+        // Print the imperial set to the console
+        System.out.println("Imperial Set Output: ");
+        System.out.println(imperialPeople);
 	}
 }
