@@ -15,6 +15,10 @@ PersonSet class
 Implements the PersonList interface and stores
 Person objects in an ArrayList.
 Does not allow duplicate Person objects to be added.
+
+For part 2 of this assignment, this class acts as the parent for:
+1. PersonOrderedSet
+2. PersonImperialSet
 */
 public class PersonSet implements PersonList {
     // Protected so future classes can access it (Part 2)
@@ -45,7 +49,8 @@ public class PersonSet implements PersonList {
   */
  @Override
  public String toString() {
-    String result = "";
+    // Start with header row for readability
+    String result = "Name\tHeight\tWeight\n";
     // Loop through every Person in the ArrayList
     for(Person p : people) {
         result += p.toString() + "\n";
